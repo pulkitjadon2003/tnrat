@@ -55,7 +55,7 @@ export async function POST(req) {
 
             const logoUrl = `${MEDIA_BASE_URL}/uploads/${fileName}`;
 
-            const oldFileName = getFileNameFromUrl(existingLeadership.profile);
+            const oldFileName = getFileNameFromUrl(existingTeam.logo);
 
             if (oldFileName) {
                 const oldFilePath = path.join(UPLOAD_DIR, oldFileName);
