@@ -33,10 +33,10 @@ export async function DELETE(req) {
             return Response.json({ status: false, message: "Team not found" }, { status: 404 });
         }
 
-        const fileName = getFileNameFromUrl(leaderShip.profile);
+        const fileName = getFileNameFromUrl(team.logo);
 
         if (fileName) {
-            const filePath = path.join("/var/www/tnrat-media/images", fileName);
+            const filePath = path.join(process.env.MEDIA_UPLOAD_PATH, fileName);
 
             try {
                 await fs.unlink(filePath);
